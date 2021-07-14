@@ -2,29 +2,30 @@ import React from "react";
 import CustomBtn from "./CustomBtn";
 import logo from "../logo.svg";
 import logoMobile from "../logoMobile.svg";
+// Material UI imports
 import { Toolbar, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { className } from "postcss-selector-parser";
-import { classes } from "istanbul-lib-coverage";
 
 const styles = makeStyles({
     bar: {
         paddingTop: "1.15rem",
+        border: "solid red 1px",
         backgroundColor: "#fff",
-        ['@media (max-width:780px)']: {
+        '@media (max-width:780px)': {
             flexDirection: "column"
         }
     },
     logo: {
         width: "15%",
-        ['@media (max-width:780px)']: {
+        '@media (max-width:780px)': {
             display: "inline-block"
         }
     },
     logoMobile: {
         width: "100%",
         display: "none",
-        ['@media (max-width:780px0']: {
+        '@media (max-width:780px0': {
             display: "inline-block"
         }
     },
@@ -34,11 +35,11 @@ const styles = makeStyles({
         "&:hover": {
             color: "#4f25c8"
         },
-        ['@media (max-width:780px)']: {
+        '@media (max-width:780px)': {
             paddingBottom: "1rem"
         }
     }
-})
+});
 
 export default function Navbar() {
   const classes = styles();
@@ -46,7 +47,8 @@ export default function Navbar() {
     <Toolbar
       position="sticky"
       color="rgba(0, 0, 0, 0.87)"
-      className={className.bar}
+      className={classes.bar}
+      style={{justifyContent: "space-around"}}
     >
       <img src={logo} className={classes.logo} alt="text"/>
       <img src={logoMobile} className={classes.logoMobile} alt="text" />
